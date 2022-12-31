@@ -17,5 +17,14 @@ document.addEventListener("submit", (e) => {
     horas_trabajo: formulario.horas_trabajo.value,
     ingresos_laborales: formulario.ingresos_laborales.value,
   };
+  formulario.sexo.value = null;
+  formulario.horas_trabajo_semana_anterior.value = "";
+  formulario.horas_trabajo_disponible.value = "";
+  formulario.numero_trabajadores.value = "";
+  formulario.horas_trabajo.value = "";
+  formulario.ingresos_laborales.value = "";
+  document.querySelectorAll("[type='radio']").forEach((radioBtn) => {
+    radioBtn.checked = false;
+  });
   socket.emit("agregar-encuesta", encuestado);
 });
