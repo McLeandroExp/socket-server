@@ -1,0 +1,55 @@
+* {
+  font-family: "Bellefair", serif;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #d0d6f9;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/background-home-desktop.jpg);
+  background-size: cover;
+}
+.container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 80%;
+  height: 90vh;
+}
+.button {
+  width: 400px;
+  height: 200px;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  background-color: #0b0d17;
+  border: 1px solid#d0d6f9;
+  color: #d0d6f9;
+  transition: all 300ms;
+}
+.button a {
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 180px;
+  text-decoration: none;
+  transition: all 300ms;
+  border-radius: 1.5rem;
+}
+.button:hover {
+  border: none;
+}
+.button a:hover {
+  cursor: pointer;
+  background-color: #d0d6f9;
+  color: #0b0d17;
+}

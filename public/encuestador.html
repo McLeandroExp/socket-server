@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/encuestador.css" />
+    <title>Encuestador</title>
+  </head>
+  <body>
+    <section class="container">
+      <form action="" id="formulario_preguntas">
+        <h1>Encuesta Economica</h1>
+        <div class="preguntas_divisor">
+          <article class="contenedor_preguntas">
+            <p><span class="nums">1.</span> Género</p>
+            <div class="opciones">
+              <label for="input_hombre">Hombre</label>
+              <input
+                type="radio"
+                name="sexo"
+                value="hombre"
+                id="input_hombre"
+              />
+
+              <label for="input_mujer">Mujer</label>
+              <input type="radio" name="sexo" value="mujer" id="input_mujer" />
+            </div>
+          </article>
+          <article class="contenedor_preguntas">
+            <label for="horas_trabajo_semana_anterior"
+              ><span class="nums">2.</span> ¿Cuantas horas trabajo la semana
+              anterior?</label
+            >
+            <input
+              type="number"
+              name="horas_trabajo_semana_anterior"
+              id="horas_trabajo_semana_anterior"
+            />
+          </article>
+          <article class="contenedor_preguntas">
+            <label for="horas_trabajo_disponible"
+              ><span class="nums">3.</span> ¿Cuantas horas dispone para
+              trabajar?</label
+            >
+            <input
+              type="number"
+              name="horas_trabajo_disponible"
+              id="horas_trabajo_disponible"
+            />
+          </article>
+          <article class="contenedor_preguntas">
+            <p><span class="nums">4.</span> ¿Recibe alimentacion?</p>
+            <div class="opciones">
+              <input
+                type="radio"
+                name="recibe_alimentacion"
+                value="si"
+                id="si_alimentacion"
+              />
+              <label for="si_alimentacion">Si</label>
+
+              <input
+                type="radio"
+                name="recibe_alimentacion"
+                value="no"
+                id="no_alimentacion"
+              />
+              <label for="no_alimentacion">No</label>
+            </div>
+          </article>
+          <article class="contenedor_preguntas">
+            <p><span class="nums">5.</span> ¿Recibe vacaciones?</p>
+            <div class="opciones">
+              <input
+                type="radio"
+                name="recibe_vacaciones"
+                value="si"
+                id="si_vacaciones"
+              />
+              <label for="si_vacaciones">Si</label>
+
+              <input
+                type="radio"
+                name="recibe_vacaciones"
+                value="no"
+                id="no_vacaciones"
+              />
+              <label for="no_vacaciones">No</label>
+            </div>
+          </article>
+          <article class="contenedor_preguntas">
+            <p><span class="nums">6.</span> ¿Recibe algún seguro medico?</p>
+            <div class="opciones">
+              <input
+                type="radio"
+                name="recibe_seguro"
+                value="si"
+                id="si_seguro"
+              />
+              <label for="si_seguro">Si</label>
+
+              <input
+                type="radio"
+                name="recibe_seguro"
+                value="no"
+                id="no_seguro"
+              />
+              <label for="no_seguro">No</label>
+            </div>
+          </article>
+          <article class="contenedor_preguntas">
+            <label for="numero_trabajadores"
+              ><span class="nums">7.</span> ¿Con cuantos trabajadores funciona
+              su lugar de trabajo?</label
+            >
+            <input
+              type="number"
+              name="numero_trabajadores"
+              id="numero_trabajadores"
+            />
+          </article>
+          <article class="contenedor_preguntas">
+            <p>
+              <span class="nums">8.</span> ¿El lugar donde trabaja tiene ruc?
+            </p>
+            <div class="opciones">
+              <input type="radio" name="tiene_ruc" value="si" id="si_ruc" />
+              <label for="si_ruc">Si</label>
+
+              <input type="radio" name="tiene_ruc" value="no" id="no_ruc" />
+              <label for="no_ruc">No</label>
+            </div>
+          </article>
+          <article class="contenedor_preguntas">
+            <label for="horas_trabajo"
+              ><span class="nums">9.</span> ¿Cuantas horas trabaja?</label
+            >
+            <input type="number" name="horas_trabajo" id="horas_trabajo" />
+          </article>
+          <article class="contenedor_preguntas">
+            <label for="ingresos_laborales"
+              ><span class="nums">10.</span> ¿Cuales son sus ingresos
+              laborales?</label
+            >
+            <input
+              type="number"
+              name="ingresos_laborales"
+              id="ingresos_laborales"
+            />
+          </article>
+        </div>
+
+        <input id="btn_enviar" type="submit" value="Enviar Formulario" />
+      </form>
+    </section>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="js/encuestador.js"></script>
+  </body>
+</html>
