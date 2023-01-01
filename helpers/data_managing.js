@@ -14,9 +14,8 @@ const excelToJson = () => {
   }
   const usuarios = encuestados.map(
     ({ p02, p24, p29, p44a, p44d, p44g, p47b, p49, p51a, ingrl }, i) => {
-      if (i < 10) {
+      if (i < numEncuestados) {
         return {
-          num_encuestado: i + 1,
           sexo: p02 === 1 ? "hombre" : "mujer",
           horas_trabajo_semana_anterior: p24,
           horas_semana_disponible_para_trabajar: p29,
@@ -34,6 +33,7 @@ const excelToJson = () => {
   const worksheet = xlsx.utils.json_to_sheet(usuarios);
   const workbook = xlsx.utils.book_new();
   xlsx.utils.book_append_sheet(workbook, worksheet, "encuestados");
-  xlsx.writeFile(workbook, "encuestados.xlsx");
+  xlsx.writeFile(workbook, "data/encuestados.xlsx");
 };
+excelToJson();
 module.exports = excelToJson;
