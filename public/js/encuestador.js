@@ -2,6 +2,8 @@ const formulario = document.querySelector("#formulario_preguntas");
 
 const socket = io();
 
+const isFormFilled = (encuestado) => !Object.values(encuestado).includes("");
+
 document.addEventListener("submit", (e) => {
   e.preventDefault();
   const encuestado = {
@@ -17,14 +19,17 @@ document.addEventListener("submit", (e) => {
     horas_trabajo: formulario.horas_trabajo.value,
     ingresos_laborales: formulario.ingresos_laborales.value,
   };
-  formulario.sexo.value = null;
-  formulario.horas_trabajo_semana_anterior.value = "";
-  formulario.horas_trabajo_disponible.value = "";
-  formulario.numero_trabajadores.value = "";
-  formulario.horas_trabajo.value = "";
-  formulario.ingresos_laborales.value = "";
-  document.querySelectorAll("[type='radio']").forEach((radioBtn) => {
-    radioBtn.checked = false;
-  });
-  socket.emit("agregar-encuesta", encuestado);
+  const formFilled = isFormFilled(encuestado);
+  if (formFilled) {
+    formulario.sexo.value = null;
+    formulario.horas_trabajo_semana_anterior.value = null;
+    formulario.horas_trabajo_disponible.value = null;
+    formulario.numero_trabajadores.value = null;
+    formulario.horas_trabajo.value = null;
+    formulario.ingresos_laborales.value = null;
+    document.querySelectorAll("[type='radio']").forEach((radioBtn) => {
+      radioBtn.checked = false;
+    });
+    socket.emit("agregar-encuesta", encuestado);
+  }
 });

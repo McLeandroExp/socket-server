@@ -21,7 +21,7 @@ body {
   gap: 1.5rem;
 }
 .preguntas {
-  width: 50%;
+  width: 500px;
   background-color: #180d35;
   border-radius: 1rem;
   display: flex;
@@ -45,4 +45,13 @@ h3 {
   border: 1px solid #d0d6f9;
   text-align: center;
   color: #d0d6f9;
+}
+
+@media (width <= 700px) {
+  body {
+    font-size: 0.8rem;
+  }
+  .preguntas {
+    width: 300px;
+  }
 }

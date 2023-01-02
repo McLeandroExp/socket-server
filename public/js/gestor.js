@@ -1,19 +1,25 @@
 //variables html
 const surveys_table = document.querySelector(".surveys_table");
+
+//instancia socket
 const socket = io();
+
+//elementos de pantalla
+const width = window.innerWidth;
+const minWidth = 700;
+
 socket.on("enviar-encuestas", ({ numMostrados, encuestas }) => {
   surveys_table.innerHTML = "";
-  console.log("encuestas.length : ", encuestas.length);
 
   const $trheader = document.createElement("tr");
   const $fragment = document.createDocumentFragment();
   const $x = document.createElement("th");
-  $x.innerText = "Numero de participante";
+  $x.innerText = width >= minWidth ? "Numero de participante" : "N°";
   $x.classList.add("cell");
   $trheader.append($x);
   for (let i = 0; i < numMostrados; i++) {
     const $th_row = document.createElement("th");
-    $th_row.innerText = `Pregunta ${i + 1}`;
+    $th_row.innerText = width >= minWidth ? `Pregunta ${i + 1}` : `P${i + 1}`;
     $th_row.classList.add("cell");
     $trheader.appendChild($th_row);
   }
